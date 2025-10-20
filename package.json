@@ -1,0 +1,30 @@
+{
+  "name": "metasiberia-site",
+  "version": "1.0.0",
+  "description": "Metasiberia - Metaverse website",
+  "main": "page62281087.html",
+  "scripts": {
+    "build": "echo 'Static site - no build required'",
+    "start": "echo 'Static site - use Vercel for hosting'",
+    "dev": "echo 'Static site - use local server for development'"
+  },
+  "keywords": [
+    "metaverse",
+    "vr",
+    "virtual-reality",
+    "metasiberia",
+    "static-site"
+  ],
+  "author": "Denis Shipilov <greatdng@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/metasiberia-site.git"
+  },
+  "homepage": "https://metasiberia.com",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

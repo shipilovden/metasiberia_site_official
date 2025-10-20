@@ -1,0 +1,45 @@
+ErrorDocument 403 /page64027043.html
+ErrorDocument 404 /page64027043.html
+
+DirectoryIndex page62281087.html
+
+RewriteEngine On
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =http
+RewriteRule ^(.*)$ https://metasiberia\.com/$1 [R=301,L]
+
+RewriteCond %{HTTP:X-Forwarded-Proto} =https
+RewriteCond %{HTTP_HOST} ^www\.metasiberia.com [NC]
+RewriteRule ^(.*)$ https://metasiberia\.com/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} /robots.txt
+RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
+RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^faq$ page62442585.html [NC]
+RewriteRule ^faq/$ page62442585.html [NC]
+
+RewriteRule ^terms$ page63809043.html [NC]
+RewriteRule ^terms/$ page63809043.html [NC]
+
+RewriteRule ^lua$ page63810393.html [NC]
+RewriteRule ^lua/$ page63810393.html [NC]
+
+RewriteRule ^scripts$ page63811825.html [NC]
+RewriteRule ^scripts/$ page63811825.html [NC]
+
+RewriteRule ^store$ page63813121.html [NC]
+RewriteRule ^store/$ page63813121.html [NC]
+
+RewriteRule ^header$ page64026745.html [NC]
+RewriteRule ^header/$ page64026745.html [NC]
+
+RewriteRule ^footer$ page64026811.html [NC]
+RewriteRule ^footer/$ page64026811.html [NC]
+
+RewriteRule ^error$ page64027043.html [NC]
+RewriteRule ^error/$ page64027043.html [NC]
+
+RewriteRule ^morpher$ page64103135.html [NC]
+RewriteRule ^morpher/$ page64103135.html [NC]
+
+

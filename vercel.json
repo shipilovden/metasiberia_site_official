@@ -1,0 +1,190 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/page62281087.html"
+    },
+    {
+      "src": "/faq",
+      "dest": "/page62442585.html"
+    },
+    {
+      "src": "/faq/",
+      "dest": "/page62442585.html"
+    },
+    {
+      "src": "/terms",
+      "dest": "/page63809043.html"
+    },
+    {
+      "src": "/terms/",
+      "dest": "/page63809043.html"
+    },
+    {
+      "src": "/lua",
+      "dest": "/page63810393.html"
+    },
+    {
+      "src": "/lua/",
+      "dest": "/page63810393.html"
+    },
+    {
+      "src": "/scripts",
+      "dest": "/page63811825.html"
+    },
+    {
+      "src": "/scripts/",
+      "dest": "/page63811825.html"
+    },
+    {
+      "src": "/store",
+      "dest": "/page63813121.html"
+    },
+    {
+      "src": "/store/",
+      "dest": "/page63813121.html"
+    },
+    {
+      "src": "/header",
+      "dest": "/page64026745.html"
+    },
+    {
+      "src": "/header/",
+      "dest": "/page64026745.html"
+    },
+    {
+      "src": "/footer",
+      "dest": "/page64026811.html"
+    },
+    {
+      "src": "/footer/",
+      "dest": "/page64026811.html"
+    },
+    {
+      "src": "/error",
+      "dest": "/page64027043.html"
+    },
+    {
+      "src": "/error/",
+      "dest": "/page64027043.html"
+    },
+    {
+      "src": "/morpher",
+      "dest": "/page64103135.html"
+    },
+    {
+      "src": "/morpher/",
+      "dest": "/page64103135.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/page62281087.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/page62442585.html",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/page63809043.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/page63810393.html",
+      "destination": "/lua",
+      "permanent": true
+    },
+    {
+      "source": "/page63811825.html",
+      "destination": "/scripts",
+      "permanent": true
+    },
+    {
+      "source": "/page63813121.html",
+      "destination": "/store",
+      "permanent": true
+    },
+    {
+      "source": "/page64026745.html",
+      "destination": "/header",
+      "permanent": true
+    },
+    {
+      "source": "/page64026811.html",
+      "destination": "/footer",
+      "permanent": true
+    },
+    {
+      "source": "/page64027043.html",
+      "destination": "/error",
+      "permanent": true
+    },
+    {
+      "source": "/page64103135.html",
+      "destination": "/morpher",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    },
+    {
+      "source": "/css/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/js/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "functions": {
+    "app/api/404.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
+}
