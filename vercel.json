@@ -6,134 +6,82 @@
       "use": "@vercel/static"
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/",
-      "dest": "/page62281087.html"
+      "source": "/",
+      "destination": "/page62281087.html"
     },
     {
-      "src": "/faq",
-      "dest": "/page62442585.html"
+      "source": "/faq",
+      "destination": "/page62442585.html"
     },
     {
-      "src": "/faq/",
-      "dest": "/page62442585.html"
+      "source": "/faq/",
+      "destination": "/page62442585.html"
     },
     {
-      "src": "/terms",
-      "dest": "/page63809043.html"
+      "source": "/terms",
+      "destination": "/page63809043.html"
     },
     {
-      "src": "/terms/",
-      "dest": "/page63809043.html"
+      "source": "/terms/",
+      "destination": "/page63809043.html"
     },
     {
-      "src": "/lua",
-      "dest": "/page63810393.html"
+      "source": "/lua",
+      "destination": "/page63810393.html"
     },
     {
-      "src": "/lua/",
-      "dest": "/page63810393.html"
+      "source": "/lua/",
+      "destination": "/page63810393.html"
     },
     {
-      "src": "/scripts",
-      "dest": "/page63811825.html"
+      "source": "/scripts",
+      "destination": "/page63811825.html"
     },
     {
-      "src": "/scripts/",
-      "dest": "/page63811825.html"
+      "source": "/scripts/",
+      "destination": "/page63811825.html"
     },
     {
-      "src": "/store",
-      "dest": "/page63813121.html"
+      "source": "/store",
+      "destination": "/page63813121.html"
     },
     {
-      "src": "/store/",
-      "dest": "/page63813121.html"
+      "source": "/store/",
+      "destination": "/page63813121.html"
     },
     {
-      "src": "/header",
-      "dest": "/page64026745.html"
+      "source": "/header",
+      "destination": "/page64026745.html"
     },
     {
-      "src": "/header/",
-      "dest": "/page64026745.html"
+      "source": "/header/",
+      "destination": "/page64026745.html"
     },
     {
-      "src": "/footer",
-      "dest": "/page64026811.html"
+      "source": "/footer",
+      "destination": "/page64026811.html"
     },
     {
-      "src": "/footer/",
-      "dest": "/page64026811.html"
+      "source": "/footer/",
+      "destination": "/page64026811.html"
     },
     {
-      "src": "/error",
-      "dest": "/page64027043.html"
+      "source": "/error",
+      "destination": "/page64027043.html"
     },
     {
-      "src": "/error/",
-      "dest": "/page64027043.html"
+      "source": "/error/",
+      "destination": "/page64027043.html"
     },
     {
-      "src": "/morpher",
-      "dest": "/page64103135.html"
+      "source": "/morpher",
+      "destination": "/page64103135.html"
     },
     {
-      "src": "/morpher/",
-      "dest": "/page64103135.html"
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/page62281087.html",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/page62442585.html",
-      "destination": "/faq",
-      "permanent": true
-    },
-    {
-      "source": "/page63809043.html",
-      "destination": "/terms",
-      "permanent": true
-    },
-    {
-      "source": "/page63810393.html",
-      "destination": "/lua",
-      "permanent": true
-    },
-    {
-      "source": "/page63811825.html",
-      "destination": "/scripts",
-      "permanent": true
-    },
-    {
-      "source": "/page63813121.html",
-      "destination": "/store",
-      "permanent": true
-    },
-    {
-      "source": "/page64026745.html",
-      "destination": "/header",
-      "permanent": true
-    },
-    {
-      "source": "/page64026811.html",
-      "destination": "/footer",
-      "permanent": true
-    },
-    {
-      "source": "/page64027043.html",
-      "destination": "/error",
-      "permanent": true
-    },
-    {
-      "source": "/page64103135.html",
-      "destination": "/morpher",
-      "permanent": true
+      "source": "/morpher/",
+      "destination": "/page64103135.html"
     }
   ],
   "headers": [
@@ -181,10 +129,5 @@
         }
       ]
     }
-  ],
-  "functions": {
-    "app/api/404.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
