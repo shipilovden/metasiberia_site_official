@@ -6,6 +6,8 @@ Metasiberia is a virtual world project inspired by and based on the open-source 
 
 - Official Metasiberia repository: https://github.com/shipilovden/sub-metasiberia
 
+![Metasiberia Main Site](./Main_site.png)
+
 ## Quick Access
 
 - Admin: https://vr.metasiberia.com/
