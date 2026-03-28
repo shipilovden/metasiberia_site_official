@@ -20,6 +20,11 @@ yarn-error.log*
 *.swp
 *.swo
 
+# Local secrets
+.secrets/
+AGENTS.md
+.playwright-cli/
+
 # OS
 .DS_Store
 Thumbs.db

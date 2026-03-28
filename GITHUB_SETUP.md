@@ -1,97 +1,29 @@
-# 🚀 Настройка GitHub репозитория
+# GitHub Setup
 
-## Шаги для создания репозитория на GitHub:
+GitHub для этого проекта используется как репозиторий исходников.
 
-### 1. Создание репозитория на GitHub.com
-1. Перейдите на https://github.com/new
-2. Заполните форму:
-   - **Repository name:** `metasiberia_site_oficial`
-   - **Description:** `Official Metasiberia website - Static site built with Tilda and deployed on Vercel`
-   - **Visibility:** Public
-   - **НЕ добавляйте** README, .gitignore или лицензию
-3. Нажмите "Create repository"
+## Важно
 
-### 2. Подключение локального репозитория к GitHub
-После создания репозитория выполните команды:
+- GitHub не является каналом автоматического прод-деплоя
+- Продакшен для этого проекта находится на REG.RU
+- Push в GitHub сам по себе не публикует сайт
+
+## Базовая настройка
 
 ```bash
-# Добавить удаленный репозиторий (замените YOUR_USERNAME на ваш GitHub username)
-git remote add origin https://github.com/YOUR_USERNAME/metasiberia_site_oficial.git
-
-# Переименовать ветку в main
+git remote add origin https://github.com/YOUR_USERNAME/metasiberia_site_official.git
 git branch -M main
-
-# Отправить код на GitHub
 git push -u origin main
 ```
 
-### 3. Подключение к Vercel
-1. Перейдите на https://vercel.com/dashboard
-2. Нажмите "New Project"
-3. Выберите "Import Git Repository"
-4. Найдите и выберите `metasiberia_site_oficial`
-5. Нажмите "Import"
-6. Vercel автоматически определит настройки из `vercel.json`
-7. Нажмите "Deploy"
+## Рекомендуемый поток
 
-### 4. Настройка автоматического деплоя
-После подключения к Vercel:
-- Каждый push в main ветку будет автоматически деплоить сайт
-- Vercel будет использовать настройки из `vercel.json`
-- Сайт будет доступен по адресу: `https://metasiberia_site_oficial.vercel.app`
+1. Меняешь файлы локально
+2. Проверяешь сайт через `npm run dev`
+3. Коммитишь изменения в GitHub
+4. Отдельно выкладываешь статические файлы на REG.RU
 
-## 📁 Структура проекта:
-```
-metasiberia_site_oficial/
-├── page62281087.html          # Главная страница
-├── page62442585.html          # FAQ
-├── page63809043.html          # Terms
-├── page63810393.html          # Lua
-├── page63811825.html          # Scripts
-├── page63813121.html          # Store
-├── page64026745.html          # Header
-├── page64026811.html          # Footer
-├── page64027043.html          # Error 404
-├── page64103135.html          # Morpher
-├── vercel.json                # Конфигурация Vercel
-├── package.json               # Метаданные проекта
-├── README.md                  # Описание проекта
-├── DEPLOY.md                  # Инструкции по деплою
-├── QUICK_DEPLOY.md            # Быстрый деплой
-├── deploy.sh                  # Скрипт автоматического деплоя
-├── .gitignore                 # Git исключения
-├── htaccess                   # Apache конфигурация
-├── sitemap.xml                # Карта сайта
-├── robots.txt                 # Правила для роботов
-├── 404.html                   # Страница ошибки
-├── css/                       # CSS файлы
-├── js/                        # JavaScript файлы
-├── images/                    # Изображения
-├── files/                     # Дополнительные файлы
-└── api/                       # API функции
-```
+## Что не делать
 
-## 🔧 Команды для работы с проектом:
-
-```bash
-# Клонирование репозитория
-git clone https://github.com/YOUR_USERNAME/metasiberia_site_oficial.git
-cd metasiberia_site_oficial
-
-# Установка зависимостей
-npm install
-
-# Локальный запуск
-npm start
-
-# Деплой на Vercel
-npm run deploy
-# или
-vercel --prod
-```
-
-## 📝 Примечания:
-- Все HTML файлы обновлены (удален пункт "News" из меню)
-- Настроены чистые URL через `vercel.json`
-- Готов к автоматическому деплою через Vercel
-- Поддерживает все функции оригинального сайта
+- Не использовать старые legacy-инструкции деплоя
+- Не считать GitHub источником автодеплоя для `metasiberia.com`

@@ -1,35 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Скрипт для быстрого деплоя на Vercel
-# Использование: ./deploy.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
 
-echo "🚀 Подготовка к деплою Metasiberia на Vercel..."
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
+OUTPUT_DIR=".deploy"
+ARCHIVE_PATH="$OUTPUT_DIR/metasiberia-reg-ru-$TIMESTAMP.tar.gz"
 
-# Проверяем наличие Vercel CLI
-if ! command -v vercel &> /dev/null; then
-    echo "❌ Vercel CLI не установлен. Устанавливаем..."
-    npm install -g vercel
-fi
+mkdir -p "$OUTPUT_DIR"
 
-# Проверяем авторизацию
-echo "🔐 Проверяем авторизацию в Vercel..."
-if ! vercel whoami &> /dev/null; then
-    echo "❌ Не авторизованы в Vercel. Выполняем авторизацию..."
-    vercel login
-fi
+tar \
+  --exclude='.git' \
+  --exclude='.secrets' \
+  --exclude='.deploy' \
+  --exclude='node_modules' \
+  -czf "$ARCHIVE_PATH" \
+  404.html \
+  api \
+  css \
+  files \
+  images \
+  js \
+  page62281087.html \
+  page62442585.html \
+  page63809043.html \
+  page63810393.html \
+  page63811825.html \
+  page63813121.html \
+  page64026745.html \
+  page64026811.html \
+  page64027043.html \
+  page64103135.html \
+  robots.txt \
+  sitemap.xml \
+  htaccess \
+  readme.txt
 
-# Инициализируем Git если нужно
-if [ ! -d ".git" ]; then
-    echo "📦 Инициализируем Git репозиторий..."
-    git init
-    git add .
-    git commit -m "Initial commit for Vercel deployment"
-fi
-
-# Деплой
-echo "🚀 Запускаем деплой..."
-vercel --prod
-
-echo "✅ Деплой завершен!"
-echo "🌐 Ваш сайт доступен по адресу, который показал Vercel"
-echo "📖 Подробные инструкции в DEPLOY.md"
+echo "Archive created: $ARCHIVE_PATH"
+echo "Production deploy target: REG.RU"
+echo "This project deploys only to REG.RU."

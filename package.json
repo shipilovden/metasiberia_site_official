@@ -5,8 +5,8 @@
   "main": "page62281087.html",
   "scripts": {
     "build": "echo 'Static site - no build required'",
-    "start": "echo 'Static site - use Vercel for hosting'",
-    "dev": "echo 'Static site - use local server for development'"
+    "start": "node scripts/dev-server.mjs",
+    "dev": "node scripts/dev-server.mjs"
   },
   "keywords": [
     "metaverse",

@@ -1,68 +1,32 @@
-# 🚀 Быстрый деплой Metasiberia на Vercel
+# Быстрый деплой на REG.RU
 
-## Вариант 1: Через веб-интерфейс (Самый простой)
+1. Перейди в проект:
 
-### Шаг 1: Подготовьте репозиторий
 ```bash
-git init
-git add .
-git commit -m "Ready for Vercel deployment"
-git push origin main
+cd "C:/Three/Metasiberia official/Metasiberia one"
 ```
 
-### Шаг 2: Деплой через Vercel Dashboard
-1. Идите на [vercel.com](https://vercel.com)
-2. Нажмите **"New Project"**
-3. Подключите ваш GitHub репозиторий
-4. Настройки:
-   - **Framework Preset:** `Other`
-   - **Root Directory:** `./`
-   - **Build Command:** (оставить пустым)
-   - **Output Directory:** (оставить пустым)
-5. Нажмите **"Deploy"**
+2. Проверь сайт локально:
 
-## Вариант 2: Через Vercel CLI
-
-### Установка Vercel CLI
 ```bash
-npm install -g vercel
+npm run dev
 ```
 
-### Авторизация
-```bash
-vercel login
-```
+3. Убедись, что открываются:
 
-### Деплой
-```bash
-vercel --prod
-```
+- `/`
+- `/faq`
+- `/terms`
+- `/lua`
+- `/scripts`
+- `/store`
+- `/morpher`
 
-## ✅ Что уже готово
+4. Загрузи актуальные статические файлы на REG.RU в корень сайта
 
-- ✅ `vercel.json` - полная конфигурация
-- ✅ `package.json` - метаданные проекта  
-- ✅ `api/404.js` - обработка ошибок
-- ✅ Все маршруты настроены
-- ✅ Редиректы настроены
-- ✅ Кэширование настроено
-- ✅ Безопасность настроена
+5. После выкладки проверь `https://metasiberia.com` и ключевые маршруты
 
-## 🌐 После деплоя проверьте
+Важно:
 
-- [ ] Главная: `https://your-domain.vercel.app/`
-- [ ] FAQ: `https://your-domain.vercel.app/faq`
-- [ ] Terms: `https://your-domain.vercel.app/terms`
-- [ ] Lua: `https://your-domain.vercel.app/lua`
-- [ ] Scripts: `https://your-domain.vercel.app/scripts`
-- [ ] Store: `https://your-domain.vercel.app/store`
-- [ ] Morpher: `https://your-domain.vercel.app/morpher`
-- [ ] 404 страница: `https://your-domain.vercel.app/nonexistent`
-
-## 🎯 Готово!
-
-Ваш сайт Metasiberia готов к деплою! 🚀
-
-**Время деплоя:** ~2-3 минуты
-**Сложность:** Очень простая
-**Результат:** Полнофункциональный сайт на Vercel
+- Этот проект публикуется только на REG.RU
+- Источник доступа и серверные детали смотри только в локальном `AGENTS.md` и `.secrets/`
