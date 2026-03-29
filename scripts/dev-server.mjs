@@ -1,14 +1,18 @@
 import http from "node:http";
 import path from "node:path";
 import { promises as fs } from "node:fs";
+import { fileURLToPath } from "node:url";
 
-const ROOT_DIR = process.cwd();
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = path.resolve(SCRIPT_DIR, "..");
 const DEFAULT_PORT = 8000;
 const DEFAULT_HOST = "127.0.0.1";
 const FALLBACK_ERROR_PAGE = "/page64027043.html";
 const SAME_SITE_URL_PATTERN = /https?:\/\/(?:www\.)?metasiberia\.com(?=\/)/gi;
 const REWRITE_MAP = new Map([
   ["/", "/page62281087.html"],
+  ["/news", "/page64220001.html"],
+  ["/news/", "/page64220001.html"],
   ["/faq", "/page62442585.html"],
   ["/faq/", "/page62442585.html"],
   ["/terms", "/page63809043.html"],

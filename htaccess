@@ -15,6 +15,9 @@ RewriteRule ^(.*)$ https://metasiberia\.com/$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} /robots.txt
 RewriteCond "%{DOCUMENT_ROOT}/robots_%{HTTP_HOST}.txt" -f
 RewriteRule ^(.*)$ robots_%{HTTP_HOST}.txt [NC,L]
+RewriteRule ^news$ page64220001.html [NC]
+RewriteRule ^news/$ page64220001.html [NC]
+
 RewriteRule ^faq$ page62442585.html [NC]
 RewriteRule ^faq/$ page62442585.html [NC]
 
@@ -41,5 +44,4 @@ RewriteRule ^error/$ page64027043.html [NC]
 
 RewriteRule ^morpher$ page64103135.html [NC]
 RewriteRule ^morpher/$ page64103135.html [NC]
-
 

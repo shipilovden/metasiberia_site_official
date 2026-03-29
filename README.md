@@ -2,7 +2,7 @@
 
 This repository contains the official website for Metasiberia.
 
-Metasiberia is a virtual world project inspired by and based on the open-source Substrata software. The official Metasiberia source repository lives here:
+Metasiberia is a virtual world project built on the Glare-core engine. The official Metasiberia source repository lives here:
 
 - Official Metasiberia repository: https://github.com/shipilovden/sub-metasiberia
 
@@ -22,7 +22,7 @@ Metasiberia is a virtual world project inspired by and based on the open-source 
 
 ## Credits
 
-Metasiberia is inspired by and built on Substrata.
+Metasiberia is built on the Glare-core engine.
 
 - Official Metasiberia repository: https://github.com/shipilovden/sub-metasiberia
 - Metasiberia website repository: https://github.com/shipilovden/metasiberia_site_official
