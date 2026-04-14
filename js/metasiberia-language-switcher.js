@@ -178,6 +178,135 @@
       backToTop: "Back to top"
     }
   };
+  var AVATAR_SECTION_ID = "avatars";
+  var AVATAR_SECTION_MOUNT_ID = "metasiberia-avatar-home";
+  var AVATAR_IMAGE_FOLDER = "images/avatar";
+  var AVATAR_IMAGE_EXTENSIONS = ["png", "webp", "jpg", "jpeg", "svg"];
+  var AVATAR_UI_COPY = {
+    ru: {
+      sectionTitle: "Аватары Metasiberia",
+      sectionIntro: "Полная костомизация аватаров.\nВ процессе разработки",
+      imageLabel: "Изображение раздела",
+      folderLabel: "Папка для изображений",
+      autoloadHint: "Секция автоматически подхватит файл с именем",
+      prevLabel: "Предыдущее изображение",
+      nextLabel: "Следующее изображение",
+      bulletLabel: "Перейти к изображению ",
+      slideLabel: "Изображение",
+      formatLabel: "Формат",
+      formatValue: "горизонтальный скриншот",
+      ratioLabel: "Рекомендуемая пропорция",
+      ratioValue: "16:9 или близко к ней",
+      placeholderTitle: "Добавьте изображение",
+      placeholderHint: "Положите горизонтальный скриншот в images/avatar, и блок обновится автоматически"
+    },
+    en: {
+      sectionTitle: "Metasiberia avatars",
+      sectionIntro: "Full avatar customization.\nWork in progress",
+      imageLabel: "Section image",
+      folderLabel: "Image folder",
+      autoloadHint: "The section will pick up a file named",
+      prevLabel: "Previous image",
+      nextLabel: "Next image",
+      bulletLabel: "Go to image ",
+      slideLabel: "Image",
+      formatLabel: "Format",
+      formatValue: "horizontal screenshot",
+      ratioLabel: "Suggested ratio",
+      ratioValue: "16:9 or close to it",
+      placeholderTitle: "Add an image",
+      placeholderHint: "Drop a horizontal screenshot into images/avatar and this block will update automatically"
+    }
+  };
+  var AVATAR_SHOWCASE_SLIDES = [
+    {
+      fileStem: "avatars-metasiberia-01",
+      eyebrow: {
+        ru: "Слайд 01",
+        en: "Slide 01"
+      },
+      title: {
+        ru: "Аватары Metasiberia",
+        en: "Metasiberia avatars"
+      },
+      deck: {
+        ru:
+          "Широкий кадр с несколькими персонажами лучше всего смотрится в этой секции: он показывает стиль аватаров, их разнообразие и общий визуальный характер проекта.",
+        en:
+          "A wide frame with several characters works best in this section because it shows the avatar style, their variety, and the overall visual identity of the project."
+      },
+      highlights: {
+        ru: [
+          "Используйте один готовый горизонтальный скриншот",
+          "Лучше, если персонажи занимают центральную и среднюю часть кадра",
+          "Подойдут соотношения сторон 16:9, 21:9 или близкие к ним"
+        ],
+        en: [
+          "Use one finished horizontal screenshot",
+          "It works best when the characters occupy the center and middle of the frame",
+          "16:9, 21:9, or similar aspect ratios will fit well"
+        ]
+      }
+    },
+    {
+      fileStem: "avatars-metasiberia-02",
+      eyebrow: {
+        ru: "Слайд 02",
+        en: "Slide 02"
+      },
+      title: {
+        ru: "Аватары Metasiberia",
+        en: "Metasiberia avatars"
+      },
+      deck: {
+        ru:
+          "Широкий кадр с несколькими персонажами лучше всего смотрится в этой секции: он показывает стиль аватаров, их разнообразие и общий визуальный характер проекта.",
+        en:
+          "A wide frame with several characters works best in this section because it shows the avatar style, their variety, and the overall visual identity of the project."
+      },
+      highlights: {
+        ru: [
+          "Используйте один готовый горизонтальный скриншот",
+          "Лучше, если персонажи занимают центральную и среднюю часть кадра",
+          "Подойдут соотношения сторон 16:9, 21:9 или близкие к ним"
+        ],
+        en: [
+          "Use one finished horizontal screenshot",
+          "It works best when the characters occupy the center and middle of the frame",
+          "16:9, 21:9, or similar aspect ratios will fit well"
+        ]
+      }
+    },
+    {
+      fileStem: "avatars-metasiberia-03",
+      eyebrow: {
+        ru: "Слайд 03",
+        en: "Slide 03"
+      },
+      title: {
+        ru: "Аватары Metasiberia",
+        en: "Metasiberia avatars"
+      },
+      deck: {
+        ru:
+          "Широкий кадр с несколькими персонажами лучше всего смотрится в этой секции: он показывает стиль аватаров, их разнообразие и общий визуальный характер проекта.",
+        en:
+          "A wide frame with several characters works best in this section because it shows the avatar style, their variety, and the overall visual identity of the project."
+      },
+      highlights: {
+        ru: [
+          "Используйте один готовый горизонтальный скриншот",
+          "Лучше, если персонажи занимают центральную и среднюю часть кадра",
+          "Подойдут соотношения сторон 16:9, 21:9 или близкие к ним"
+        ],
+        en: [
+          "Use one finished horizontal screenshot",
+          "It works best when the characters occupy the center and middle of the frame",
+          "16:9, 21:9, or similar aspect ratios will fit well"
+        ]
+      }
+    }
+  ];
   var TECH_SECTION_ID = "capabilities";
   var TECH_SECTION_MOUNT_ID = "metasiberia-tech-home";
   var TECH_SLIDER_DELAY = 0;
@@ -1388,7 +1517,7 @@
       "#rec858665447 .t-col,#rec858665447 .t-col_10,#rec858665447 .t-prefix_1{float:none;width:100%;max-width:none;margin:0;padding-left:0;padding-right:0;}",
       "#rec858665447 .t134__descr{display:block;width:100%;max-width:18ch;margin:0 auto;color:#f4efe5 !important;opacity:1 !important;text-align:center;font:600 clamp(30px,4.3vw,58px)/1.02 'Source Code Pro',monospace;letter-spacing:0;text-transform:none;text-wrap:balance;}",
       "#rec859988145 .t-slds__container,#rec859988145 .t-slds__items-wrapper{overflow:hidden;}",
-      "#rec859988145 .t-slds__item .t-container{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;box-sizing:border-box;padding:36px;background:linear-gradient(180deg,rgba(248,245,236,0.98),rgba(236,231,220,0.98));border:1px solid rgba(255,255,255,0.14);box-shadow:0 34px 80px rgba(0,0,0,0.34);overflow:hidden;}",
+      "#rec859988145 .t-slds__item .t-container{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:center;width:100%;max-width:none;margin:0 auto;box-sizing:border-box;padding:36px;background:linear-gradient(180deg,rgba(248,245,236,0.98),rgba(236,231,220,0.98));border:1px solid rgba(255,255,255,0.14);box-shadow:0 34px 80px rgba(0,0,0,0.34);overflow:hidden;}",
       "#rec859988145 .t-slds__item .t-container::before{content:'';position:absolute;inset:20px;border:1px solid rgba(16,16,16,0.08);pointer-events:none;}",
       "#rec859988145 .t-slds__item .t-col{position:relative;z-index:1;float:none;width:auto;max-width:none;margin:0;padding-left:0;padding-right:0;}",
       "#rec859988145 .t801__centeredsection{display:flex;align-items:center;justify-content:center;}",
@@ -1411,6 +1540,32 @@
       "#rec860756273 .t-btnflex:hover{transform:translateY(-1px);background:rgba(255,255,255,0.12);border-color:#ffffff;color:#ffffff !important;}",
       "#rec860756273 .t-btnflex:focus-visible{outline:2px solid #ffffff;outline-offset:2px;}",
       "#rec860756273 .t-btnflex__text{color:inherit !important;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + "{padding:0;background:#0b1017;color:#ffffff;overflow:hidden;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + ",#" + AVATAR_SECTION_MOUNT_ID + " *{box-sizing:border-box;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__shell{position:relative;padding:40px 0;background:radial-gradient(circle at top left, rgba(70,118,182,0.28), transparent 32%),radial-gradient(circle at top right, rgba(19,77,122,0.24), transparent 28%),linear-gradient(180deg,#101721 0%,#090d14 100%);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__header{width:min(1320px,calc(100% - 96px));margin:0 auto 24px;display:grid;gap:10px;justify-items:center;text-align:center;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__section-title{margin:0;color:#f4efe5;font:600 clamp(30px,4.3vw,58px)/1.02 'Source Code Pro',monospace;max-width:18ch;text-wrap:balance;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__section-intro{margin:0;color:rgba(244,239,229,0.76);font:400 16px/1.8 'Source Code Pro',monospace;white-space:pre-line;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__viewport{position:relative;overflow:hidden;width:min(1320px,calc(100% - 96px));margin:0 auto;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__track{display:flex;transition:transform .45s ease;will-change:transform;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__slide{flex:0 0 100%;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__spread{position:relative;z-index:1;width:100%;margin:0 auto;padding:22px;background:linear-gradient(180deg,rgba(248,245,236,0.98),rgba(236,231,220,0.98));border:1px solid rgba(255,255,255,0.14);box-shadow:0 34px 80px rgba(0,0,0,0.34);}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__spread::before{content:'';position:absolute;inset:20px;border:1px solid rgba(16,16,16,0.08);pointer-events:none;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__media-frame{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;aspect-ratio:16 / 9;width:100%;min-height:320px;border:1px solid rgba(16,16,16,0.1);background:radial-gradient(circle at top, rgba(146,219,255,0.2), transparent 32%),linear-gradient(180deg,#101721 0%,#09101a 100%);box-shadow:0 18px 34px rgba(0,0,0,0.14);overflow:hidden;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__media-frame::before{content:'';position:absolute;inset:18px;border:1px solid rgba(255,255,255,0.08);pointer-events:none;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__image{display:block;width:100%;height:100%;object-fit:cover;object-position:center center;background:#09101a;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__image[data-avatar-state='placeholder']{object-fit:cover;padding:0;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__controls{position:absolute;inset:0;pointer-events:none;z-index:3;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow{pointer-events:auto;position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border:1px solid rgba(255,255,255,0.28);background:rgba(255,255,255,0.92);color:#09101a;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .18s ease,background-color .18s ease,border-color .18s ease;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow:hover{background:#ffffff;border-color:#ffffff;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow:focus-visible{outline:2px solid #ffffff;outline-offset:2px;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow--prev{left:22px;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow--next{right:22px;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow svg{display:block;width:14px;height:14px;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__bullets{display:flex;justify-content:center;gap:12px;margin-top:22px;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__bullet{width:11px;height:11px;padding:0;border-radius:999px;border:2px solid rgba(255,255,255,0.84);background:transparent;cursor:pointer;transition:transform .18s ease,background-color .18s ease;}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__bullet:hover{transform:scale(1.08);}",
+      "#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__bullet.is-active{background:#ffffff;transform:scale(1.12);}",
       "#" + TECH_SECTION_MOUNT_ID + "{padding:0;background:#0b1017;color:#ffffff;overflow:hidden;}",
       "#" + TECH_SECTION_MOUNT_ID + ",#" + TECH_SECTION_MOUNT_ID + " *{box-sizing:border-box;}",
       "#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__shell{position:relative;padding:42px 0 36px;background:radial-gradient(circle at top left, rgba(70,118,182,0.28), transparent 32%),radial-gradient(circle at top right, rgba(19,77,122,0.24), transparent 28%),linear-gradient(180deg,#101721 0%,#090d14 100%);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);}",
@@ -1471,7 +1626,9 @@
       "#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__bullet{width:11px;height:11px;padding:0;border-radius:999px;border:2px solid rgba(255,255,255,0.84);background:transparent;cursor:pointer;transition:transform .18s ease,background-color .18s ease;}",
       "#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__bullet:hover{transform:scale(1.08);}",
       "#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__bullet.is-active{background:#ffffff;transform:scale(1.12);}",
+      "@media screen and (max-width:1100px){#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__header,#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__viewport{width:min(1320px,calc(100% - 48px));}}",
       "@media screen and (max-width:1100px){#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__header{width:min(1320px,calc(100% - 48px));grid-template-columns:1fr;justify-items:center;text-align:center;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__section-intro{justify-self:center;max-width:56ch;text-align:center;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__slide{padding:0 56px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__spread{grid-template-columns:1fr;min-height:auto;}}",
+      "@media screen and (max-width:700px){#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__shell{padding:26px 0;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__header,#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__viewport{width:calc(100% - 32px);}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__section-title{font-size:clamp(26px,9vw,38px);}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__section-intro{font-size:15px;line-height:1.7;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__spread{padding:16px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__spread::before{inset:10px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__media-frame{min-height:220px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__media-frame::before{inset:12px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow{width:42px;height:42px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow--prev{left:16px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__arrow--next{right:16px;}#" + AVATAR_SECTION_MOUNT_ID + " .metasiberia-avatar__bullets{margin-top:18px;}}",
       "@media screen and (max-width:700px){#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__shell{padding:26px 0 24px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__header{width:calc(100% - 32px);margin-bottom:18px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__slide{padding:0 16px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__spread{padding:22px 20px 20px;gap:16px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__spread::before{inset:12px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__meta{align-items:flex-start;flex-direction:column;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__title{max-width:none;font-size:clamp(28px,10vw,40px);}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__deck{font-size:15px;line-height:1.7;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__panel{padding:18px 16px 18px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__action-link{flex:1 1 calc(50% - 6px);min-height:40px;padding:10px 12px;font-size:10px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__arrow{width:42px;height:42px;top:auto;bottom:74px;transform:none;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__arrow--prev{left:16px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__arrow--next{right:16px;}#" + TECH_SECTION_MOUNT_ID + " .metasiberia-tech__bullets{margin-top:18px;}}",
       "@media screen and (max-width:1100px){#" + NEWS_SECTION_MOUNT_ID + " .metasiberia-news-home__head,#" + NEWS_SECTION_MOUNT_ID + " .metasiberia-news-home__grid,#rec858665447 .t-container,#rec859988145 .t-slds__main,#rec860756273 .t142{width:min(1320px,calc(100% - 48px));}}",
       "@media screen and (max-width:980px){#" + NEWS_SECTION_MOUNT_ID + " .metasiberia-news-home__grid{grid-template-columns:repeat(2,minmax(0,1fr));}#rec859988145 .t-slds__item .t-container{grid-template-columns:1fr;padding:28px;}}",
@@ -1553,6 +1710,10 @@
 
   function getNewsCopy(language) {
     return NEWS_UI_COPY[normalizeLanguage(language)] || NEWS_UI_COPY.ru;
+  }
+
+  function getAvatarCopy(language) {
+    return AVATAR_UI_COPY[normalizeLanguage(language)] || AVATAR_UI_COPY.ru;
   }
 
   function getLocalizedNewsValue(value, language) {
@@ -1769,6 +1930,62 @@
       '<div class="news-story__body">' + paragraphs + "</div>",
       '<a class="news-story__backlink" href="#allrecords">' + escapeHtml(backToTopLabel) + "</a>",
       "</article>"
+    ].join("");
+  }
+
+  function getAvatarFilePattern(slide) {
+    return slide.fileStem + ".{" + AVATAR_IMAGE_EXTENSIONS.join(",") + "}";
+  }
+
+  function getAvatarImageBasePath(slide) {
+    return AVATAR_IMAGE_FOLDER + "/" + slide.fileStem;
+  }
+
+  function createAvatarPlaceholderDataUri(title, filePattern, language) {
+    var svg = [
+      "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'>",
+      "<defs>",
+      "<linearGradient id='bg' x1='0' y1='0' x2='0' y2='1'>",
+      "<stop offset='0%' stop-color='#162233'/>",
+      "<stop offset='100%' stop-color='#09101a'/>",
+      "</linearGradient>",
+      "<linearGradient id='beam' x1='0' y1='0' x2='1' y2='1'>",
+      "<stop offset='0%' stop-color='#7eb7ff' stop-opacity='0.55'/>",
+      "<stop offset='100%' stop-color='#7eb7ff' stop-opacity='0'/>",
+      "</linearGradient>",
+      "</defs>",
+      "<rect width='1600' height='900' fill='url(#bg)'/>",
+      "<circle cx='1280' cy='180' r='250' fill='url(#beam)'/>",
+      "<circle cx='300' cy='760' r='260' fill='url(#beam)' opacity='0.42'/>",
+      "<rect x='64' y='64' width='1472' height='772' fill='none' stroke='rgba(255,255,255,0.18)'/>",
+      "<rect x='132' y='150' width='1336' height='520' rx='18' fill='rgba(255,255,255,0.04)' stroke='rgba(255,255,255,0.12)'/>",
+      "<circle cx='800' cy='410' r='150' fill='rgba(255,255,255,0.08)'/>",
+      "<path d='M520 694c74-126 164-188 280-188s206 62 280 188' fill='rgba(255,255,255,0.08)'/>",
+      "</svg>"
+    ].join("");
+
+    return "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg);
+  }
+
+  function buildAvatarBulletMarkup(slide, language, index, copy, isActive) {
+    return [
+      '<button class="metasiberia-avatar__bullet' + (isActive ? " is-active" : "") + '" type="button" data-avatar-slide="' + index + '" aria-label="' + escapeHtml(copy.bulletLabel + (index + 1) + ": " + getLocalizedNewsValue(slide.title, language)) + '"' + (isActive ? ' aria-current="true"' : "") + "></button>"
+    ].join("");
+  }
+
+  function buildAvatarSlideMarkup(slide, language, index, total, copy) {
+    var filePattern = getAvatarFilePattern(slide);
+    var imagePath = getAvatarImageBasePath(slide);
+    var title = getLocalizedNewsValue(slide.title, language);
+
+    return [
+      '<section class="metasiberia-avatar__slide' + (index === 0 ? " is-active" : "") + '" data-avatar-slide-index="' + index + '" role="group" aria-label="' + escapeHtml(copy.slideLabel + " " + (index + 1) + " / " + total + ": " + title) + '" aria-hidden="' + (index === 0 ? "false" : "true") + '">',
+      '<article class="metasiberia-avatar__spread">',
+      '<div class="metasiberia-avatar__media-frame">',
+      '<img class="metasiberia-avatar__image" src="" alt="' + escapeHtml(title) + '" loading="eager" fetchpriority="high" decoding="async" data-avatar-base="' + escapeHtml(imagePath) + '" data-avatar-title="' + escapeHtml(title) + '" data-avatar-file="' + escapeHtml(filePattern) + '">',
+      "</div>",
+      "</article>",
+      "</section>"
     ].join("");
   }
 
@@ -2097,6 +2314,251 @@
       "</article>",
       "</section>"
     ].join("");
+  }
+
+  function clearAvatarSectionAutoPlay(mount) {
+    var state = mount && mount.__avatarSliderState;
+
+    if (state && state.timerId) {
+      window.clearTimeout(state.timerId);
+      state.timerId = 0;
+    }
+  }
+
+  function scheduleAvatarSectionAutoPlay(mount) {
+    var state = mount && mount.__avatarSliderState;
+
+    if (!mount || !state || state.paused) {
+      return;
+    }
+  }
+
+  function setAvatarSectionSlide(mount, nextIndex) {
+    var state = mount && mount.__avatarSliderState;
+    var slides = mount ? mount.querySelectorAll(".metasiberia-avatar__slide") : [];
+    var bullets = mount ? mount.querySelectorAll(".metasiberia-avatar__bullet") : [];
+    var track = mount ? mount.querySelector(".metasiberia-avatar__track") : null;
+    var total = slides.length;
+
+    if (!mount || !state || !total) {
+      return;
+    }
+
+    nextIndex = ((nextIndex % total) + total) % total;
+    state.index = nextIndex;
+    mount.setAttribute("data-avatar-slide-current", String(nextIndex));
+
+    if (track) {
+      track.style.transform = "translateX(-" + nextIndex * 100 + "%)";
+    }
+
+    Array.prototype.forEach.call(slides, function(slide, index) {
+      var isActive = index === nextIndex;
+
+      slide.classList.toggle("is-active", isActive);
+      slide.setAttribute("aria-hidden", isActive ? "false" : "true");
+    });
+
+    Array.prototype.forEach.call(bullets, function(button, index) {
+      var isActive = index === nextIndex;
+
+      button.classList.toggle("is-active", isActive);
+
+      if (isActive) {
+        button.setAttribute("aria-current", "true");
+      } else {
+        button.removeAttribute("aria-current");
+      }
+    });
+
+    scheduleAvatarSectionAutoPlay(mount);
+  }
+
+  function resolveAvatarImages(mount, language) {
+    Array.prototype.forEach.call(mount ? mount.querySelectorAll(".metasiberia-avatar__image") : [], function(imageNode) {
+      var basePath = imageNode.getAttribute("data-avatar-base") || "";
+      var title = imageNode.getAttribute("data-avatar-title") || "";
+      var filePattern = imageNode.getAttribute("data-avatar-file") || "";
+      var requestToken = String(Date.now()) + Math.random();
+
+      if (!basePath) {
+        return;
+      }
+
+      imageNode.setAttribute("data-avatar-request", requestToken);
+      imageNode.setAttribute("data-avatar-state", "loading");
+
+      (function tryCandidate(index) {
+        var candidate;
+
+        if (!imageNode.isConnected || imageNode.getAttribute("data-avatar-request") !== requestToken) {
+          return;
+        }
+
+        if (index >= AVATAR_IMAGE_EXTENSIONS.length) {
+          imageNode.onload = null;
+          imageNode.onerror = null;
+          imageNode.setAttribute("data-avatar-state", "placeholder");
+          imageNode.src = createAvatarPlaceholderDataUri(title, filePattern, language);
+          return;
+        }
+
+        candidate = basePath + "." + AVATAR_IMAGE_EXTENSIONS[index];
+
+        imageNode.onload = function() {
+          if (!imageNode.isConnected || imageNode.getAttribute("data-avatar-request") !== requestToken) {
+            return;
+          }
+
+          imageNode.onload = null;
+          imageNode.onerror = null;
+          imageNode.setAttribute("data-avatar-state", "ready");
+        };
+
+        imageNode.onerror = function() {
+          tryCandidate(index + 1);
+        };
+
+        imageNode.src = candidate;
+      })(0);
+    });
+  }
+
+  function ensureAvatarSection() {
+    var allRecords = document.getElementById("allrecords");
+    var pageId = allRecords ? allRecords.getAttribute("data-tilda-page-id") : "";
+
+    if (pageId !== "62281087" || !allRecords) {
+      return null;
+    }
+
+    var existingMount = document.getElementById(AVATAR_SECTION_MOUNT_ID);
+
+    if (existingMount) {
+      return existingMount;
+    }
+
+    var section = document.createElement("section");
+    var mount = document.createElement("div");
+    var anchor =
+      document.getElementById(TECH_SECTION_ID) ||
+      allRecords.querySelector("#rec858665447") ||
+      allRecords.querySelector("#rec859988145");
+    var footer = allRecords.querySelector("#t-footer");
+
+    section.id = AVATAR_SECTION_ID;
+    section.className = "r t-rec metasiberia-avatar-home";
+    section.style.scrollMarginTop = "96px";
+    mount.id = AVATAR_SECTION_MOUNT_ID;
+    section.appendChild(mount);
+
+    if (anchor && anchor.parentElement === allRecords) {
+      allRecords.insertBefore(section, anchor);
+    } else if (footer && footer.parentElement === allRecords) {
+      allRecords.insertBefore(section, footer);
+    } else {
+      allRecords.appendChild(section);
+    }
+
+    return mount;
+  }
+
+  function renderAvatarSection(language) {
+    var mount = ensureAvatarSection();
+    var copy = getAvatarCopy(language);
+    var state;
+    var slidesMarkup;
+    var controlsMarkup;
+    var bulletsMarkup;
+    var prevButton;
+    var nextButton;
+    var shell;
+    var hasMultipleSlides;
+
+    if (!mount) {
+      return;
+    }
+
+    state = mount.__avatarSliderState || {
+      index: 0,
+      timerId: 0,
+      paused: false
+    };
+    clearAvatarSectionAutoPlay(mount);
+    state.index = Math.min(state.index, Math.max(AVATAR_SHOWCASE_SLIDES.length - 1, 0));
+    state.paused = false;
+    mount.__avatarSliderState = state;
+    hasMultipleSlides = AVATAR_SHOWCASE_SLIDES.length > 1;
+
+    slidesMarkup = AVATAR_SHOWCASE_SLIDES.map(function(slide, index) {
+      return buildAvatarSlideMarkup(slide, language, index, AVATAR_SHOWCASE_SLIDES.length, copy);
+    }).join("");
+    controlsMarkup = hasMultipleSlides
+      ? [
+          '<div class="metasiberia-avatar__controls">',
+          '<button class="metasiberia-avatar__arrow metasiberia-avatar__arrow--prev" type="button" aria-label="' + escapeHtml(copy.prevLabel) + '"><svg role="presentation" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="butt" stroke-width="1" points="6.5,0.5 0.5,6.5 6.5,12.5"/></svg></button>',
+          '<button class="metasiberia-avatar__arrow metasiberia-avatar__arrow--next" type="button" aria-label="' + escapeHtml(copy.nextLabel) + '"><svg role="presentation" viewBox="0 0 7.3 13" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="currentColor" stroke-linecap="butt" stroke-linejoin="butt" stroke-width="1" points="0.5,0.5 6.5,6.5 0.5,12.5"/></svg></button>',
+          "</div>"
+        ].join("")
+      : "";
+    bulletsMarkup = hasMultipleSlides
+      ? '<div class="metasiberia-avatar__bullets">' + AVATAR_SHOWCASE_SLIDES.map(function(slide, index) {
+          return buildAvatarBulletMarkup(slide, language, index, copy, index === state.index);
+        }).join("") + "</div>"
+      : "";
+    mount.innerHTML = [
+      '<div class="metasiberia-avatar__shell" role="region" aria-label="' + escapeHtml(copy.sectionTitle) + '">',
+      '<div class="metasiberia-avatar__header">',
+      '<h2 class="metasiberia-avatar__section-title">' + escapeHtml(copy.sectionTitle) + "</h2>",
+      '<p class="metasiberia-avatar__section-intro">' + escapeHtml(copy.sectionIntro) + "</p>",
+      "</div>",
+      '<div class="metasiberia-avatar__viewport">',
+      '<div class="metasiberia-avatar__track">' + slidesMarkup + "</div>",
+      "</div>",
+      controlsMarkup,
+      bulletsMarkup,
+      "</div>"
+    ].join("");
+
+    prevButton = mount.querySelector(".metasiberia-avatar__arrow--prev");
+    nextButton = mount.querySelector(".metasiberia-avatar__arrow--next");
+    shell = mount.querySelector(".metasiberia-avatar__shell");
+
+    if (prevButton) {
+      prevButton.onclick = function() {
+        state.paused = false;
+        setAvatarSectionSlide(mount, state.index - 1);
+      };
+    }
+
+    if (nextButton) {
+      nextButton.onclick = function() {
+        state.paused = false;
+        setAvatarSectionSlide(mount, state.index + 1);
+      };
+    }
+
+    Array.prototype.forEach.call(mount.querySelectorAll(".metasiberia-avatar__bullet"), function(button) {
+      button.onclick = function() {
+        state.paused = false;
+        setAvatarSectionSlide(mount, parseInt(button.getAttribute("data-avatar-slide"), 10) || 0);
+      };
+    });
+
+    if (shell) {
+      shell.onmouseenter = function() {
+        state.paused = true;
+        clearAvatarSectionAutoPlay(mount);
+      };
+
+      shell.onmouseleave = function() {
+        state.paused = false;
+        scheduleAvatarSectionAutoPlay(mount);
+      };
+    }
+
+    resolveAvatarImages(mount, language);
+    setAvatarSectionSlide(mount, state.index);
   }
 
   function clearTechnicalCapabilitiesAutoPlay(mount) {
@@ -2682,6 +3144,7 @@
     removeDeprecatedHomepageQuickSection();
     ensureHomepageHeroQuickLinks(normalizedLanguage);
     updatePageTitle(normalizedLanguage);
+    renderAvatarSection(normalizedLanguage);
     renderTechnicalCapabilitiesSection(normalizedLanguage);
     renderHomepageNewsSection(normalizedLanguage);
     renderNewsPage(normalizedLanguage);
