@@ -441,6 +441,34 @@ body.news-page-body {
   line-height: 1.6;
 }
 
+.news-footer .metasiberia-footer__links {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 4px;
+}
+
+.news-footer .metasiberia-footer__links a {
+  color: inherit;
+  text-decoration: none;
+  transition: text-decoration-color 0.18s ease;
+}
+
+.news-footer .metasiberia-footer__links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.news-footer .metasiberia-footer__links--secondary {
+  margin-top: 2px;
+}
+
+.news-footer .metasiberia-footer__separator {
+  display: inline-block;
+  margin: 0 0.38em;
+}
+
 @media screen and (max-width: 980px) {
   .news-page {
     padding-top: 100px;
