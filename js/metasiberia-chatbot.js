@@ -14,6 +14,31 @@
     '#rec872696359 a.t-menu__link-item[data-menu-item-number="9"], ' +
     '#rec872696359 a[href="#popup:embedcode"], ' +
     '#rec872696359 a[href="/#popup:embedcode"]';
+  var STATIC_BOT_RESPONSE_TEXT = [
+    "Привет, Денис Шипилов меня ещё разрабатывает, так что пока просто поизучай сайт, тут есть вся необходимая информация!",
+    "",
+    "Метавселенная Метасибирь",
+    "🚀 Добро пожаловать в Метасибирь! ❄️",
+    "Метасибирь — это независимая метавселенная, где можно исследовать и создавать виртуальные миры, общаться, учиться, играть и работать!",
+    "",
+    "🔹 Сайт: metasiberia.com (https://metasiberia.com/)",
+    "🔹 Адрес в клиенте: sub://vr.metasiberia.com",
+    "🔹 Регистрация: vr.metasiberia.com/signup (https://vr.metasiberia.com/signup)",
+    "🔹 Веб-режим: vr.metasiberia.com/webclient (https://vr.metasiberia.com/webclient)",
+    "",
+    "🔥 Как войти в Metasiberia?",
+    "~ Зарегистрируйтесь: vr.metasiberia.com/signup (https://vr.metasiberia.com/signup)",
+    "~ Скачайте клиент: Metasiberia beta (https://github.com/shipilovden/sub-metasiberia/releases)",
+    "~ Исходный код: github.com/shipilovden/sub-metasiberia (https://github.com/shipilovden/sub-metasiberia)",
+    "",
+    "⚡️ Поддержка проекта",
+    "Чтобы Метасибирь работала, должен гудеть сервер. Донат на сервер (любая сумма):",
+    "💰 СБП: ozon.ru (https://finance.ozon.ru/apps/sbp/ozonbankpay/019bf3af-df00-75ca-886f-734ede6607b9)",
+    "💳 Карта: 2204 3210 0322 2320",
+    "💡 Присоединяйтесь и станьте частью цифрового будущего! 🔥",
+    "📱 VK: vk.com (https://vk.com/metasiberia_official)"
+  ].join("\n");
+  var STATIC_BOT_RESPONSE_HTML = buildStaticBotResponseHtml();
 
   var UI_COPY = {
     ru: {
@@ -24,9 +49,8 @@
       placeholder: "Спроси про МетаСибирь",
       send: "Отправить",
       close: "Закрыть чат",
-      welcome: "Привет. Спроси про МетаСибирь.",
-      fallback:
-        "Пока я лучше всего подсказываю про участки, магазин, FAQ, карту, scripting, вебклиент, новости и основные ссылки проекта.",
+      welcome: STATIC_BOT_RESPONSE_TEXT,
+      fallback: STATIC_BOT_RESPONSE_TEXT,
       empty: "Введите сообщение перед отправкой."
     },
     en: {
@@ -37,9 +61,8 @@
       placeholder: "Ask about Metasiberia",
       send: "Send",
       close: "Close chat",
-      welcome: "Hi. Ask about Metasiberia.",
-      fallback:
-        "Right now I am best at guiding you through parcels, store, FAQ, map, scripting, the web client, news, and the main project links.",
+      welcome: STATIC_BOT_RESPONSE_TEXT,
+      fallback: STATIC_BOT_RESPONSE_TEXT,
       empty: "Type a message before sending."
     }
   };
@@ -48,8 +71,8 @@
     {
       keywords: ["привет", "здрав", "hello", "hi", "hey"],
       response: {
-        ru: "Привет. Спроси про МетаСибирь.",
-        en: "Hi. Ask about Metasiberia."
+        ru: STATIC_BOT_RESPONSE_TEXT,
+        en: STATIC_BOT_RESPONSE_TEXT
       },
       links: []
     },
@@ -211,6 +234,57 @@
     }
   ];
 
+  function buildExternalChatbotLink(href, label) {
+    return [
+      '<a class="metasiberia-chatbot__rich-link" href="',
+      href,
+      '" target="_blank" rel="noreferrer noopener">',
+      label,
+      "</a>"
+    ].join("");
+  }
+
+  function buildStaticBotResponseHtml() {
+    return [
+      '<div class="metasiberia-chatbot__rich">',
+      '<p class="metasiberia-chatbot__rich-intro">Привет, Денис Шипилов меня ещё разрабатывает, так что пока просто поизучай сайт, тут есть вся необходимая информация!</p>',
+      '<section class="metasiberia-chatbot__rich-section">',
+      '<p class="metasiberia-chatbot__rich-kicker">Метавселенная</p>',
+      '<h3 class="metasiberia-chatbot__rich-title">Метасибирь</h3>',
+      '<p>🚀 Добро пожаловать в Метасибирь! ❄️</p>',
+      '<p>Метасибирь — это независимая метавселенная, где можно исследовать и создавать виртуальные миры, общаться, учиться, играть и работать.</p>',
+      "</section>",
+      '<section class="metasiberia-chatbot__rich-section">',
+      '<p class="metasiberia-chatbot__rich-kicker">Быстрые ссылки</p>',
+      '<ul class="metasiberia-chatbot__rich-list">',
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">Сайт</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("https://metasiberia.com/", "metasiberia.com") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">Адрес в клиенте</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("sub://vr.metasiberia.com", "sub://vr.metasiberia.com") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">Регистрация</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("https://vr.metasiberia.com/signup", "vr.metasiberia.com/signup") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">Веб-режим</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("https://vr.metasiberia.com/webclient", "vr.metasiberia.com/webclient") + "</span></li>",
+      "</ul>",
+      "</section>",
+      '<section class="metasiberia-chatbot__rich-section">',
+      '<p class="metasiberia-chatbot__rich-kicker">Как войти</p>',
+      '<ul class="metasiberia-chatbot__rich-list">',
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-value">~ Зарегистрируйтесь: ' + buildExternalChatbotLink("https://vr.metasiberia.com/signup", "vr.metasiberia.com/signup") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-value">~ Скачайте клиент: ' + buildExternalChatbotLink("https://github.com/shipilovden/sub-metasiberia/releases", "Metasiberia beta") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-value">~ Исходный код: ' + buildExternalChatbotLink("https://github.com/shipilovden/sub-metasiberia", "github.com/shipilovden/sub-metasiberia") + "</span></li>",
+      "</ul>",
+      "</section>",
+      '<section class="metasiberia-chatbot__rich-section">',
+      '<p class="metasiberia-chatbot__rich-kicker">Поддержка проекта</p>',
+      '<p>⚡️ Чтобы Метасибирь работала, должен гудеть сервер. Донат на сервер, любая сумма помогает.</p>',
+      '<ul class="metasiberia-chatbot__rich-list">',
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">СБП</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("https://finance.ozon.ru/apps/sbp/ozonbankpay/019bf3af-df00-75ca-886f-734ede6607b9", "ozon.ru") + "</span></li>",
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">Карта</span><span class="metasiberia-chatbot__rich-item-value"><span class="metasiberia-chatbot__rich-code">2204 3210 0322 2320</span></span></li>',
+      '<li class="metasiberia-chatbot__rich-item"><span class="metasiberia-chatbot__rich-item-label">VK</span><span class="metasiberia-chatbot__rich-item-value">' + buildExternalChatbotLink("https://vk.com/metasiberia_official", "vk.com/metasiberia_official") + "</span></li>",
+      "</ul>",
+      '<p class="metasiberia-chatbot__rich-outro">💡 Присоединяйтесь и станьте частью цифрового будущего! 🔥</p>',
+      "</section>",
+      "</div>"
+    ].join("");
+  }
+
   var state = {
     language: "ru",
     messages: [],
@@ -296,7 +370,23 @@
       "#" + ROOT_ID + " .metasiberia-chatbot__message_user{justify-content:flex-end;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__message_assistant{justify-content:flex-start;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__bubble{max-width:min(88%,420px);padding:14px;border:1px solid #111111;background:#ffffff;color:#111111;white-space:pre-line;line-height:1.65;overflow-wrap:anywhere;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__bubble_rich{max-width:min(92%,460px);padding:18px;white-space:normal;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__message_user .metasiberia-chatbot__bubble{background:#111111;color:#ffffff;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich{display:grid;gap:16px;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich p,#" + ROOT_ID + " .metasiberia-chatbot__rich h3{margin:0;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-intro{font-size:14px;line-height:1.75;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-section{display:grid;gap:10px;padding-top:14px;border-top:1px solid rgba(17,17,17,0.12);}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-section:first-of-type{padding-top:0;border-top:none;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-kicker{color:#1f00ff;font:700 11px/1 'Source Code Pro',monospace;letter-spacing:0.12em;text-transform:uppercase;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-title{font:700 18px/1.2 'Source Code Pro',monospace;color:#111111;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-list{display:grid;gap:8px;margin:0;padding:0;list-style:none;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-item{display:grid;gap:4px;padding:10px 12px;border:1px solid rgba(17,17,17,0.12);background:rgba(255,255,255,0.72);}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-item-label{font:700 11px/1 'Source Code Pro',monospace;letter-spacing:0.08em;text-transform:uppercase;color:rgba(17,17,17,0.6);}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-item-value{line-height:1.6;overflow-wrap:anywhere;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-link{color:#1f00ff;text-decoration:underline;text-underline-offset:0.16em;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-link:hover{color:#111111;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-code{display:inline-block;padding:2px 6px;border:1px solid rgba(17,17,17,0.14);background:#ffffff;font:700 12px/1.5 'Source Code Pro',monospace;}",
+      "#" + ROOT_ID + " .metasiberia-chatbot__rich-outro{font-weight:700;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__link{display:inline-flex;align-items:center;min-height:34px;padding:0 10px;border:1px solid #111111;background:#ffffff;color:#111111;text-decoration:none;font:700 11px/1 'Source Code Pro',monospace;letter-spacing:0.08em;text-transform:uppercase;}",
       "#" + ROOT_ID + " .metasiberia-chatbot__message_user .metasiberia-chatbot__link{border-color:#ffffff;background:transparent;color:#ffffff;}",
@@ -327,11 +417,14 @@
     });
   }
 
-  function createMessage(role, text, links) {
+  function createMessage(role, text, links, options) {
+    options = options || {};
+
     return {
       role: role,
       text: text,
-      links: links || []
+      links: links || [],
+      html: options.html || ""
     };
   }
 
@@ -356,13 +449,15 @@
   }
 
   function seedWelcomeMessage() {
-    var copy = getUiCopy();
-
     if (state.messages.length) {
       return;
     }
 
-    state.messages.push(createMessage("assistant", copy.welcome));
+    state.messages.push(
+      createMessage("assistant", STATIC_BOT_RESPONSE_TEXT, [], {
+        html: STATIC_BOT_RESPONSE_HTML
+      })
+    );
   }
 
   function renderMessages() {
@@ -382,7 +477,14 @@
         "metasiberia-chatbot__message metasiberia-chatbot__message_" +
         message.role;
       bubble.className = "metasiberia-chatbot__bubble";
-      bubble.textContent = message.text;
+
+      if (message.html) {
+        bubble.className += " metasiberia-chatbot__bubble_rich";
+        bubble.innerHTML = message.html;
+      } else {
+        bubble.textContent = message.text;
+      }
+
       item.appendChild(bubble);
 
       if (message.links && message.links.length) {
@@ -572,22 +674,9 @@
   }
 
   function getReply(text) {
-    var topic = findTopic(text);
-    var copy = getUiCopy();
-
-    if (topic) {
-      return createMessage(
-        "assistant",
-        topic.response[state.language] || topic.response.ru,
-        localizeLinks(topic.links, state.language)
-      );
-    }
-
-    return createMessage(
-      "assistant",
-      copy.fallback,
-      getDefaultLinks(state.language)
-    );
+    return createMessage("assistant", STATIC_BOT_RESPONSE_TEXT, [], {
+      html: STATIC_BOT_RESPONSE_HTML
+    });
   }
 
   function submitMessage() {

@@ -5,11 +5,14 @@
   var SWITCHER_CLASS = "t450__lang-switcher";
   var CHATBOT_SCRIPT_ID = "metasiberia-chatbot-script";
   var CHATBOT_SCRIPT_SRC = "js/metasiberia-chatbot.js";
+  var TELEGRAM_MENU_KEY = "telegram";
+  var TELEGRAM_MENU_URL = "https://t.me/metasiberia_metaverse";
 
   var originalHtml = new WeakMap();
 
   var MENU_LABELS = {
     news: { ru: "Новости", en: "News" },
+    telegram: { ru: "Telegram", en: "Telegram" },
     "1": { ru: "Главная", en: "Main" },
     "2": { ru: "Участки", en: "Parcels" },
     "3": { ru: "Магазин", en: "Store" },
@@ -1038,8 +1041,8 @@
       selector: "#rec872697073 .t134__descr",
       type: "html",
       values: {
-        ru: '<div style="color: rgb(0, 0, 0); text-align: center;"><strong>Denis Shipilov</strong><br /><span>© 2023–2026 Метасибирь.</span><br /><span class="metasiberia-footer__links"><a href="https://t.me/metasiberia_metaverse" target="_blank" rel="noopener noreferrer">Telegram</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vk.com/metasiberia_official" target="_blank" rel="noopener noreferrer">VK</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://github.com/shipilovden/sub-metasiberia" target="_blank" rel="noopener noreferrer">Github</a></span><br /><span class="metasiberia-footer__links metasiberia-footer__links--secondary"><a href="https://vr.metasiberia.com/webclient" target="_blank" rel="noopener noreferrer">Webclient</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/signup" target="_blank" rel="noopener noreferrer">Регистрация</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/login" target="_blank" rel="noopener noreferrer">Вход</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/map" target="_blank" rel="noopener noreferrer">Карта</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/faq" target="_blank" rel="noopener noreferrer">F.A.Q.</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/terms" target="_blank" rel="noopener noreferrer">Правила</a></span><br /><span>Сделано на Glare-core, кофе и вере в метавселенную</span></div>',
-        en: '<div style="color: rgb(0, 0, 0); text-align: center;"><strong>Denis Shipilov</strong><br /><span>© 2023–2026 Metasiberia.</span><br /><span class="metasiberia-footer__links"><a href="https://t.me/metasiberia_metaverse" target="_blank" rel="noopener noreferrer">Telegram</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vk.com/metasiberia_official" target="_blank" rel="noopener noreferrer">VK</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://github.com/shipilovden/sub-metasiberia" target="_blank" rel="noopener noreferrer">Github</a></span><br /><span class="metasiberia-footer__links metasiberia-footer__links--secondary"><a href="https://vr.metasiberia.com/webclient" target="_blank" rel="noopener noreferrer">Webclient</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/signup" target="_blank" rel="noopener noreferrer">Signup</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/login" target="_blank" rel="noopener noreferrer">Login</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/map" target="_blank" rel="noopener noreferrer">Map</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/faq" target="_blank" rel="noopener noreferrer">F.A.Q.</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/terms" target="_blank" rel="noopener noreferrer">Terms</a></span><br /><span>Built with Glare-core, coffee, and faith in the metaverse</span></div>'
+        ru: '<div style="color: rgb(0, 0, 0); text-align: center;"><strong><a href="https://vk.com/denshipilovart" target="_blank" rel="noopener noreferrer">Denis Shipilov</a></strong><br /><span>© 2023–2026 Метасибирь.</span><br /><span class="metasiberia-footer__links"><a href="https://t.me/metasiberia_metaverse" target="_blank" rel="noopener noreferrer">Telegram</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vk.com/metasiberia_official" target="_blank" rel="noopener noreferrer">VK</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://github.com/shipilovden/sub-metasiberia" target="_blank" rel="noopener noreferrer">Github</a></span><br /><span class="metasiberia-footer__contact">Контакты: <a href="mailto:mail@metasiberia.com">mail@metasiberia.com</a></span><br /><span class="metasiberia-footer__links metasiberia-footer__links--secondary"><a href="https://vr.metasiberia.com/webclient" target="_blank" rel="noopener noreferrer">Webclient</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/signup" target="_blank" rel="noopener noreferrer">Регистрация</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/login" target="_blank" rel="noopener noreferrer">Вход</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/map" target="_blank" rel="noopener noreferrer">Карта</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/faq" target="_blank" rel="noopener noreferrer">F.A.Q.</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/terms" target="_blank" rel="noopener noreferrer">Правила</a></span><br /><span>Сделано на <a href="https://www.glaretechnologies.com/" target="_blank" rel="noopener noreferrer">Glare-core</a>, кофе и вере в метавселенную</span></div>',
+        en: '<div style="color: rgb(0, 0, 0); text-align: center;"><strong><a href="https://vk.com/denshipilovart" target="_blank" rel="noopener noreferrer">Denis Shipilov</a></strong><br /><span>© 2023–2026 Metasiberia.</span><br /><span class="metasiberia-footer__links"><a href="https://t.me/metasiberia_metaverse" target="_blank" rel="noopener noreferrer">Telegram</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vk.com/metasiberia_official" target="_blank" rel="noopener noreferrer">VK</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://github.com/shipilovden/sub-metasiberia" target="_blank" rel="noopener noreferrer">Github</a></span><br /><span class="metasiberia-footer__contact">Contact: <a href="mailto:mail@metasiberia.com">mail@metasiberia.com</a></span><br /><span class="metasiberia-footer__links metasiberia-footer__links--secondary"><a href="https://vr.metasiberia.com/webclient" target="_blank" rel="noopener noreferrer">Webclient</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/signup" target="_blank" rel="noopener noreferrer">Signup</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/login" target="_blank" rel="noopener noreferrer">Login</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://vr.metasiberia.com/map" target="_blank" rel="noopener noreferrer">Map</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/faq" target="_blank" rel="noopener noreferrer">F.A.Q.</a><span class="metasiberia-footer__separator" aria-hidden="true">|</span><a href="https://metasiberia.com/terms" target="_blank" rel="noopener noreferrer">Terms</a></span><br /><span>Built with <a href="https://www.glaretechnologies.com/" target="_blank" rel="noopener noreferrer">Glare-core</a>, coffee, and faith in the metaverse</span></div>'
       }
     },
     {
@@ -1489,10 +1492,11 @@
       "#rec872697073{border-top:1px solid rgba(255,255,255,0.08);}",
       "#rec872697073 .t134{padding-top:28px;padding-bottom:34px;}",
       "#rec872697073 .t134__descr,#rec872697073 .t134__descr *,#rec872697073 .t134__title,#rec872697073 .t134__title *{color:#f4efe5 !important;}",
+      "#rec872697073 .t134__descr a{text-decoration:none;transition:text-decoration-color .18s ease;}",
+      "#rec872697073 .t134__descr a:hover{text-decoration:underline;text-underline-offset:0.16em;}",
       "#rec872697073 .metasiberia-footer__links{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;row-gap:4px;}",
+      "#rec872697073 .metasiberia-footer__contact{display:inline-block;margin-top:2px;}",
       "#rec872697073 .metasiberia-footer__links--secondary{margin-top:2px;}",
-      "#rec872697073 .metasiberia-footer__links a{text-decoration:none;transition:text-decoration-color .18s ease;}",
-      "#rec872697073 .metasiberia-footer__links a:hover{text-decoration:underline;text-underline-offset:0.16em;}",
       "#rec872697073 .metasiberia-footer__links a:focus-visible{outline:2px solid rgba(244,239,229,0.92);outline-offset:2px;}",
       "#rec872697073 .metasiberia-footer__separator{display:inline-block;margin:0 0.38em;}",
       "#" + NEWS_SECTION_MOUNT_ID + "{padding:0;background:#0b1017;color:#ffffff;overflow:hidden;}",
@@ -1801,6 +1805,64 @@
       }
 
       list.insertBefore(newsItem, list.firstChild || null);
+    });
+  }
+
+  function buildTelegramMenuItem() {
+    var item = document.createElement("li");
+    var link = document.createElement("a");
+
+    item.className = "t450__list_item";
+    link.className = "t-menu__link-item js-telegram-menu-item";
+    link.setAttribute("href", TELEGRAM_MENU_URL);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noreferrer noopener");
+    link.setAttribute("data-menu-submenu-hook", "");
+    link.setAttribute("data-menu-item-number", TELEGRAM_MENU_KEY);
+    link.textContent = "Telegram";
+    item.appendChild(link);
+
+    return item;
+  }
+
+  function normalizeTelegramMenuLink(link) {
+    link.classList.add("js-telegram-menu-item");
+    link.setAttribute("href", TELEGRAM_MENU_URL);
+    link.setAttribute("data-menu-item-number", TELEGRAM_MENU_KEY);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noreferrer noopener");
+  }
+
+  function ensureTelegramMenuLinks() {
+    document.querySelectorAll("#rec872696359 .t450__list").forEach(function(list) {
+      var existingLink = list.querySelector(
+        ".js-telegram-menu-item, .t-menu__link-item[data-menu-item-number='" + TELEGRAM_MENU_KEY + "'], .t-menu__link-item[href='" + TELEGRAM_MENU_URL + "'], .t-menu__link-item[href='https://t.me/metasiberia_official']"
+      );
+
+      if (existingLink) {
+        normalizeTelegramMenuLink(existingLink);
+        return;
+      }
+
+      var chatBotLink = list.querySelector(".t-menu__link-item[data-menu-item-number='9']");
+      var nftLink = list.querySelector(".t-menu__link-item[data-menu-item-number='10']");
+      var telegramItem = buildTelegramMenuItem();
+
+      if (chatBotLink && chatBotLink.parentElement) {
+        if (chatBotLink.parentElement.nextSibling) {
+          list.insertBefore(telegramItem, chatBotLink.parentElement.nextSibling);
+        } else {
+          list.appendChild(telegramItem);
+        }
+        return;
+      }
+
+      if (nftLink && nftLink.parentElement) {
+        list.insertBefore(telegramItem, nftLink.parentElement);
+        return;
+      }
+
+      list.appendChild(telegramItem);
     });
   }
 
@@ -3037,6 +3099,7 @@
   function updateSharedUiLanguage(language) {
     var isRussian = language === "ru";
     var repositoryUrl = "https://github.com/shipilovden/sub-metasiberia";
+    var telegramUrl = TELEGRAM_MENU_URL;
     var skipLinkLabel = isRussian ? "К основному контенту" : "Skip to main content";
     var sliderLabel = isRussian ? "Слайдер" : "Slider";
     var previousSlideLabel = isRussian ? "Предыдущий слайд" : "Previous slide";
@@ -3056,6 +3119,14 @@
       .querySelectorAll('a[href="https://github.com/glaretechnologies/substrata"]')
       .forEach(function(node) {
         node.setAttribute("href", repositoryUrl);
+      });
+
+    document
+      .querySelectorAll("#rec872696359 .t450__right_social_links a[aria-label='telegram'], #rec872696359 .t-sociallinks__item_telegram a")
+      .forEach(function(node) {
+        node.setAttribute("href", telegramUrl);
+        node.setAttribute("target", "_blank");
+        node.setAttribute("rel", "noreferrer noopener");
       });
 
     document.querySelectorAll(".t-slds").forEach(function(node) {
@@ -3144,6 +3215,7 @@
     }
 
     ensureNewsMenuLinks();
+    ensureTelegramMenuLinks();
     updateMenuLabels(normalizedLanguage);
     applySelectorUpdates(normalizedLanguage);
     applyLeafTextRules(normalizedLanguage);
